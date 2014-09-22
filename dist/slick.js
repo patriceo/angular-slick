@@ -101,7 +101,8 @@ angular.module('slick', []).directive('slick', [
         if (scope.initOnload) {
           isInitialized = false;
           return scope.$watch('data', function (newVal, oldVal) {
-            if(newVal == null) return false;
+           if(newVal == null
+                && $(element).children().length == 0) return false;
 
             if ( isInitialized )
             {
